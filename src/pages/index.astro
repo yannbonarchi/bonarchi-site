@@ -6,7 +6,9 @@ const work = (await getCollection('work', ({ data }) => !data.draft))
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, 3);
 
-const posts = (await getCollection('writing', ({ data }) => !data.draft))
+const posts = (
+  await getCollection('writing', ({ data }) => !data.draft && data.lang === 'en')
+)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 
@@ -183,7 +185,7 @@ const jsonLd = [
       <ul class="entry-list">
         {posts.map((p) => (
           <li>
-            <a href={`/writing/${p.id}`} class="entry">
+            <a href={`/writing/${p.data.urlSlug}`} class="entry">
               <span class="entry-title">{p.data.title}</span>
               <span class="entry-summary">{p.data.description}</span>
               <span class="meta entry-year">{fmt(p.data.pubDate)}</span>

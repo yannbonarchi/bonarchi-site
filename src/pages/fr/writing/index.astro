@@ -2,9 +2,9 @@
 import Base from '../../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('writing', ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = (
+  await getCollection('writing', ({ data }) => !data.draft && data.lang === 'fr')
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const fmt = (d: Date) =>
   d.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -18,15 +18,13 @@ const fmt = (d: Date) =>
       Notes de l'intérieur de la fintech d'Afrique centrale. Mobile money, core
       banking, réglementation, et ce que l'ingénierie apprend sur le leadership.
     </p>
-    <p class="note">Les articles sont pour l'instant rédigés en anglais.</p>
-
     {posts.length === 0 ? (
       <p class="empty">Les premières notes arrivent bientôt.</p>
     ) : (
       <ul class="posts">
         {posts.map((p) => (
           <li>
-            <a href={`/writing/${p.id}`} class="post">
+            <a href={`/fr/writing/${p.data.urlSlug}`} class="post">
               <time class="meta" datetime={p.data.pubDate.toISOString()}>{fmt(p.data.pubDate)}</time>
               <h2>{p.data.title}</h2>
               <p>{p.data.description}</p>

@@ -11,6 +11,10 @@ const writing = defineCollection({
     updated: z.coerce.date().optional(),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
+    lang: z.enum(['en', 'fr']).default('en'),
+    // Shared URL slug across translations. Named urlSlug (not "slug",
+    // which Astro reserves as the entry id and would collide across langs).
+    urlSlug: z.string(),
   }),
 });
 

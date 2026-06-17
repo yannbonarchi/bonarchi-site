@@ -4,6 +4,8 @@ description: "The bank branch never reached most of the CEMAC region. A SIM card
 pubDate: 2026-06-17
 tags: ["fintech", "mobile-money", "cemac"]
 draft: false
+lang: en
+urlSlug: why-mobile-money-leapfrogged-banks
 ---
 
 In much of Central Africa, the bank branch never showed up. The mobile phone did. That one fact explains more about how money moves here than any chart of GDP per capita ever will.

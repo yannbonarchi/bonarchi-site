@@ -2,9 +2,9 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('writing', ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = (
+  await getCollection('writing', ({ data }) => !data.draft && data.lang === 'en')
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -25,7 +25,7 @@ const fmt = (d: Date) =>
       <ul class="posts">
         {posts.map((p) => (
           <li>
-            <a href={`/writing/${p.id}`} class="post">
+            <a href={`/writing/${p.data.urlSlug}`} class="post">
               <time class="meta" datetime={p.data.pubDate.toISOString()}>
                 {fmt(p.data.pubDate)}
               </time>
