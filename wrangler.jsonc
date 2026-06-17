@@ -1,0 +1,13 @@
+{
+  // Cloudflare Workers Static Assets — serves the Astro build output (dist/)
+  // as a static site. No server code; assets-only Worker.
+  // Build command: `pnpm build` · Deploy command: `npx wrangler deploy`
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bonarchi-site",
+  "compatibility_date": "2026-06-17",
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

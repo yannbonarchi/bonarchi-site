@@ -1,4 +1,12 @@
-# pnpm 11 reads build-script approvals from here, not package.json.
+# Single-package "workspace". The `packages` field is required by pnpm 10
+# (Cloudflare's builder). The build-script approvals below let esbuild + sharp
+# run their native postinstall. Both key spellings are kept so the approval is
+# honored across pnpm 10 (`onlyBuiltDependencies`) and 11 (`allowBuilds`).
+packages:
+  - .
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
 allowBuilds:
   esbuild: true
   sharp: true
