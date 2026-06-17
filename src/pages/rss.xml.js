@@ -7,7 +7,7 @@ export async function GET(context) {
   ).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
   return rss({
-    title: 'Yann Bonarchi Simeu',
+    title: 'Bonarchi SIMEU',
     description:
       'Notes on fintech, mobile money, core banking, and the road from engineering to leadership, written from Central Africa.',
     site: context.site,

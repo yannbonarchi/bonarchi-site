@@ -10,7 +10,7 @@ urlSlug: why-mobile-money-leapfrogged-banks
 
 Dans une grande partie de l'Afrique centrale, l'agence bancaire n'est jamais venue. Le téléphone, lui, est arrivé. Ce seul fait explique mieux comment l'argent circule ici que n'importe quel graphique de PIB par habitant.
 
-Je construis depuis des années les logiciels qui font tourner tout ça. Pas les applications sur lesquelles on tape, la couche en dessous : les grands livres, les intégrations, les travaux de réconciliation qui tournent la nuit et décident si un solde est juste ou faux au matin. De cette place, la montée du mobile money ne ressemble pas à une histoire marketing. Elle ressemble à de l'infrastructure qui trouve le chemin de moindre résistance.
+Je travaille du côté de la banque. Pas l'application portefeuille sur laquelle on tape, mais la couche en dessous : quand un compte bancaire et un portefeuille mobile money doivent s'échanger des fonds, le logiciel qui fait s'accorder les deux systèmes. C'est exactement ce pont que j'ai construit. De cette place, la montée du mobile money ne ressemble pas à une histoire marketing. Elle ressemble à de l'infrastructure qui trouve le chemin de moindre résistance.
 
 ## Le problème que la banque n'a pas résolu
 

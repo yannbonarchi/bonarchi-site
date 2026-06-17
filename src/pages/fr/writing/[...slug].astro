@@ -29,8 +29,8 @@ const jsonLd = {
   dateModified: (data.updated ?? data.pubDate).toISOString(),
   url,
   mainEntityOfPage: url,
-  author: { '@type': 'Person', name: 'Yann Bonarchi Simeu', url: origin },
-  publisher: { '@type': 'Person', name: 'Yann Bonarchi Simeu', url: origin },
+  author: { '@type': 'Person', name: 'Bonarchi SIMEU', url: origin },
+  publisher: { '@type': 'Person', name: 'Bonarchi SIMEU', url: origin },
   keywords: data.tags.join(', '),
 };
 ---
@@ -60,7 +60,19 @@ const jsonLd = {
 </Base>
 
 <style>
-  .prose { padding-top: 2rem; max-width: 44rem; }
+  .prose { padding-top: 2rem; max-width: 48rem; }
+  .prose :global(p),
+  .prose :global(ul),
+  .prose :global(ol),
+  .prose :global(blockquote) {
+    max-width: none;
+    font-size: 1.2rem;
+    line-height: 1.75;
+  }
+  .prose :global(h2) {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-top: 2.75rem;
+  }
   .back {
     font-family: var(--mono);
     font-size: 0.8rem;
@@ -69,7 +81,7 @@ const jsonLd = {
     display: inline-block;
     margin-bottom: 1.5rem;
   }
-  h1 { margin-top: 0.5rem; }
+  h1 { margin-top: 0.5rem; font-size: clamp(2.2rem, 5vw, 3.2rem); }
   .tags { display: flex; gap: 0.75rem; flex-wrap: wrap; }
   .tag {
     font-family: var(--mono);

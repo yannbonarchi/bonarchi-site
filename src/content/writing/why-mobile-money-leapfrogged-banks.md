@@ -10,7 +10,7 @@ urlSlug: why-mobile-money-leapfrogged-banks
 
 In much of Central Africa, the bank branch never showed up. The mobile phone did. That one fact explains more about how money moves here than any chart of GDP per capita ever will.
 
-I have spent years building the software behind this. Not the apps people tap on, the layer underneath: the ledgers, the integrations, the reconciliation jobs that run at night and decide whether a balance is right or wrong by morning. From that seat, the rise of mobile money does not look like a marketing story. It looks like infrastructure finding the path of least resistance.
+I work on the bank side of this. Not the wallet app people tap on, but the layer underneath: when a bank account and a mobile money wallet have to move funds between each other, the software that makes the two systems agree. I built exactly that bridge. From that seat, the rise of mobile money does not look like a marketing story. It looks like infrastructure finding the path of least resistance.
 
 ## The problem the bank did not solve
 
