@@ -14,7 +14,7 @@
   --ink: #1c1813;          /* near-black writing ink */
   --ink-soft: #574f43;     /* secondary text */
   --ink-faint: #8c8270;    /* metadata, captions */
-  --rule: #d8cdb8;         /* ruled ledger lines */
+  --rule: #d8cdb8;         /* ruled ledger lines (borders + faint page background) */
   --rule-strong: #b8ab8f;  /* double-rule under masthead */
   --accent: #b6492c;       /* terracotta — Central African earth */
   --accent-deep: #8f3620;
