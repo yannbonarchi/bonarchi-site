@@ -41,19 +41,53 @@ const topics = [
   'System design',
   'Engineering → leadership',
 ];
+
+const origin = Astro.site?.origin ?? 'https://bonarchisimeu.me';
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Yann Bonarchi Simeu',
+    url: origin,
+    jobTitle: 'Software Engineer',
+    description:
+      'Software engineer building banking and fintech systems in Central Africa.',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Yaoundé',
+      addressCountry: 'CM',
+    },
+    knowsAbout: [
+      'Banking software',
+      'Mobile money',
+      'Core banking systems',
+      'Fintech',
+      'CEMAC',
+    ],
+    // TODO: add your real LinkedIn URL to sameAs once confirmed.
+    sameAs: ['https://github.com/bonarchisimeu'],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Yann Bonarchi Simeu',
+    url: origin,
+  },
+];
 ---
 
-<Base title="Yann Bonarchi Simeu">
+<Base title="Yann Bonarchi Simeu" jsonLd={jsonLd}>
   <!-- HERO -->
   <section class="hero wrap">
     <div class="hero-text">
       <p class="eyebrow">Software engineer · Yaoundé, Cameroon</p>
-      <h1>I build the banking infrastructure of Central Africa.</h1>
+      <h1>I turn institutional problems into software people actually use.</h1>
       <p class="lede">
-        For years I've shipped the software that moves money across the CEMAC
-        region — core banking, mobile money rails, the systems people never see
-        but use every day. I'm now turning that engineering ground-truth into
-        something larger.
+        Starting with the hardest one: banking. For years I've built the
+        software behind it in the CEMAC region: core banking, mobile money
+        rails, the systems that move money for people a branch never reached.
+        Now I'm widening the lens to how institutions across the region serve
+        people, and turning that engineering into something larger.
       </p>
       <p class="hero-cta">
         <a href="/work">See the work</a>

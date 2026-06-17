@@ -8,17 +8,28 @@ interface Props {
   description?: string;
   /** Open Graph type — "website" for pages, "article" for posts */
   type?: 'website' | 'article';
+  /** Social share image, resolved against the site origin. */
+  image?: string;
+  /** ISO date — emits article:published_time for posts. */
+  publishedTime?: string;
+  /** JSON-LD structured data — one object or an array. */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
   title,
-  description = 'Software engineer building banking infrastructure in Central Africa. Notes on fintech, mobile money, and the road from engineering to leadership.',
+  description = 'I help banks in Central Africa reach people on the phones they already use. Notes on fintech, mobile money, and the road from engineering to leadership.',
   type = 'website',
+  image = '/og.png',
+  publishedTime,
+  jsonLd,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image, Astro.site);
 const siteName = 'Yann Bonarchi Simeu';
 const fullTitle = title === siteName ? title : `${title} · ${siteName}`;
+const ldBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 
 <!doctype html>
@@ -28,6 +39,7 @@ const fullTitle = title === siteName ? title : `${title} · ${siteName}`;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <meta name="author" content={siteName} />
     <link rel="canonical" href={canonical} />
 
     <!-- Open Graph / social -->
@@ -36,11 +48,24 @@ const fullTitle = title === siteName ? title : `${title} · ${siteName}`;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={siteName} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    {type === 'article' && publishedTime && (
+      <meta property="article:published_time" content={publishedTime} />
+      <meta property="article:author" content={siteName} />
+    )}
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="alternate" type="application/rss+xml" title={siteName} href="/rss.xml" />
     <meta name="generator" content={Astro.generator} />
+
+    {ldBlocks.map((block) => (
+      <script type="application/ld+json" set:html={JSON.stringify(block)} />
+    ))}
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>

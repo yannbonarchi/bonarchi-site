@@ -13,9 +13,31 @@ const { data } = post;
 
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const origin = Astro.site?.origin ?? 'https://bonarchisimeu.me';
+const url = new URL(Astro.url.pathname, Astro.site).href;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: data.title,
+  description: data.description,
+  datePublished: data.pubDate.toISOString(),
+  dateModified: (data.updated ?? data.pubDate).toISOString(),
+  url,
+  mainEntityOfPage: url,
+  author: { '@type': 'Person', name: 'Yann Bonarchi Simeu', url: origin },
+  publisher: { '@type': 'Person', name: 'Yann Bonarchi Simeu', url: origin },
+  keywords: data.tags.join(', '),
+};
 ---
 
-<Base title={data.title} description={data.description} type="article">
+<Base
+  title={data.title}
+  description={data.description}
+  type="article"
+  publishedTime={data.pubDate.toISOString()}
+  jsonLd={jsonLd}
+>
   <article class="wrap prose">
     <a class="back" href="/writing">← Writing</a>
     <time class="meta" datetime={data.pubDate.toISOString()}>{fmt(data.pubDate)}</time>

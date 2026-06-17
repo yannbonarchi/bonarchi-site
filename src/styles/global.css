@@ -4,7 +4,7 @@
    Paper & ink · terracotta accent · ruled lines · tabular figures.
    ============================================================ */
 
-@import '@fontsource-variable/fraunces';
+@import '@fontsource-variable/space-grotesk';
 @import '@fontsource-variable/inter';
 
 :root {
@@ -21,7 +21,7 @@
   --accent-wash: #efd9cf;  /* faint accent tint */
 
   /* --- type ------------------------------------------------------ */
-  --display: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+  --display: 'Space Grotesk Variable', system-ui, -apple-system, sans-serif;
   --body: 'Inter Variable', system-ui, -apple-system, sans-serif;
   --mono: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, monospace;
 
