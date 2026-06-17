@@ -16,7 +16,7 @@ export const ui = {
     'nav.contact': 'Contact',
     'lang.switch': 'FR',
     'lang.switch.label': 'Lire en français',
-    'footer.colophon': 'Built with Astro. Set in Space Grotesk & Inter. Hosted on the edge.',
+    'footer.colophon': "A software builder's notebook, written from Central Africa.",
     'footer.email': 'Email',
   },
   fr: {
@@ -29,7 +29,7 @@ export const ui = {
     'nav.contact': 'Contact',
     'lang.switch': 'EN',
     'lang.switch.label': 'Read in English',
-    'footer.colophon': 'Construit avec Astro. Composé en Space Grotesk & Inter. Hébergé sur le edge.',
+    'footer.colophon': "Le carnet d'un concepteur logiciel, écrit depuis l'Afrique centrale.",
     'footer.email': 'Courriel',
   },
 } as const;
