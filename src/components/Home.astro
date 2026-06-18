@@ -241,33 +241,42 @@ const COPY = {
   .hero-cta .sep { color: var(--ink-faint); margin: 0 0.75rem; }
 
   /* identity card — pinned, tilted note with a genuinely folded corner */
+  /* outer holds the (fixed) pin; only the paper inside tilts/lifts */
   .card {
     position: relative;
     align-self: start;
-    transform: rotate(-1.4deg);
-    filter: drop-shadow(0 11px 15px rgba(20, 23, 27, 0.26));
-    transition: transform 0.25s ease;
   }
-  .card:hover { transform: rotate(0deg) translateY(-3px); }
   .card-body {
     position: relative;
     background: var(--paper-2);
     border: 1px solid var(--rule-strong);
     padding: 1.4rem 1.5rem 1.5rem;
+    transform: rotate(-1.5deg);
+    transform-origin: 50% 13px; /* the pin: paper swings around it */
+    box-shadow: 0 11px 18px -10px rgba(20, 23, 27, 0.3);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
   }
-  /* push-pin */
+  .card:hover .card-body {
+    transform: rotate(1deg); /* swings the other way around the pin */
+    box-shadow: 0 16px 24px -12px rgba(20, 23, 27, 0.32);
+  }
+  /* push-pin — sits across the top edge so it reads as piercing the paper */
   .card::before {
     content: "";
     position: absolute;
-    top: -10px;
+    top: 4px;
     left: 50%;
     transform: translateX(-50%);
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
     border-radius: 50%;
-    background: radial-gradient(circle at 34% 30%, #fff 0 16%, var(--accent) 32%, var(--accent-deep) 100%);
-    box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.45);
-    z-index: 2;
+    background: radial-gradient(circle at 34% 28%, #fff 0 14%, var(--accent) 30%, var(--accent-deep) 100%);
+    /* highlight ring + a shadow cast down onto the paper */
+    box-shadow:
+      inset 0 0 0 1px rgba(0, 0, 0, 0.15),
+      0 4px 5px -1px rgba(0, 0, 0, 0.45),
+      0 9px 9px -4px rgba(0, 0, 0, 0.25);
+    z-index: 3;
   }
   .card-head { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
   .card-name { font-family: var(--display); font-size: 1.3rem; font-weight: 600; margin: 1rem 0 0.1rem; }
@@ -345,7 +354,6 @@ const COPY = {
     .card { order: 2; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .card { transform: none; }
-    .card:hover { transform: translateY(-3px); }
+    .card-body, .card:hover .card-body { transform: rotate(-1.5deg); transition: none; }
   }
 </style>
