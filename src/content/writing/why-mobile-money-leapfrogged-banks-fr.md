@@ -22,7 +22,7 @@ Puis les opérateurs mobiles sont arrivés avec quelque chose de presque acciden
 
 ## Pourquoi le saut a fonctionné
 
-On parle du saut technologique comme d'une magie. Ça n'en est pas. C'est ce qui arrive quand une nouvelle technologie épouse mieux le terrain que l'ancienne ne l'a jamais fait.
+On parle du saut technologique comme d'une magie. Ça n'en est pas. C'est ce qui arrive quand une nouvelle technologie colle mieux au terrain que l'ancienne ne l'a jamais fait.
 
 Trois choses l'ont rendu possible ici.
 
@@ -30,15 +30,15 @@ La première, c'est l'agent. Un agent mobile money a besoin d'un téléphone, d'
 
 La deuxième, c'est le téléphone lui-même. Pas besoin d'un smartphone pour le mobile money. L'USSD, ces codes en `*126#`, tourne sur le combiné le moins cher et sur un réseau faible. Pas d'app store, pas de forfait data, pas de bagarre avec la connectivité. La technologie a rejoint les gens là où était déjà leur matériel.
 
-La troisième, c'est la confiance, et c'est celle que les regards extérieurs ratent. Les gens faisaient confiance à la marque de l'opérateur avant celle de la banque. Ils achetaient du crédit depuis des années. La relation existait déjà. L'argent n'a fait que monter par-dessus.
+La troisième, c'est la confiance, et c'est celle que les regards extérieurs ratent. Les gens faisaient confiance à la marque de l'opérateur avant celle de la banque. Ils achetaient du crédit depuis des années. La relation existait déjà. L'argent n'a fait que s'y greffer.
 
 ## À quoi ça ressemble côté ingénierie
 
 C'est là que mon travail commence, et que le romantisme s'arrête.
 
-Un solde mobile money est un passif dans le grand livre de quelqu'un. Quand un client déplace de l'argent de son compte bancaire vers son portefeuille, deux systèmes qui n'ont jamais été conçus pour se parler doivent s'accorder sur une seule vérité, en temps réel, sur un réseau qui coupe. Le difficile n'est jamais le chemin nominal. C'est la transaction qui expire après le débit mais avant le crédit. C'est la requête en double d'un client qui réessaie. C'est la réconciliation en fin de journée qui doit prouver qu'aucun franc n'a été créé ni perdu.
+Un solde mobile money est une dette inscrite dans le grand livre de quelqu'un. Quand un client déplace de l'argent de son compte bancaire vers son portefeuille, deux systèmes qui n'ont jamais été conçus pour se parler doivent se mettre d'accord sur un seul montant, en temps réel, sur un réseau qui coupe. Le difficile, ce n'est jamais le cas idéal. C'est la transaction qui expire après le débit mais avant le crédit. C'est la requête envoyée deux fois par un client qui réessaie. C'est la réconciliation en fin de journée qui doit prouver qu'aucun franc n'a été créé ni perdu.
 
-L'idempotence cesse d'être un mot de manuel pour devenir ce qui t'empêche de créditer deux fois un client quand son téléphone perd le réseau en plein paiement. La réconciliation cesse d'être une corvée pour devenir l'audit qui protège la banque et l'opérateur l'un de l'autre. On apprend vite que, dans le logiciel financier, juste l'emporte sur malin à chaque fois.
+L'idempotence cesse d'être un mot de manuel pour devenir ce qui t'empêche de créditer deux fois un client quand son téléphone perd le réseau en plein paiement. La réconciliation cesse d'être une corvée pour devenir l'audit qui protège la banque et l'opérateur l'un de l'autre. On apprend vite que, dans le logiciel financier, la rigueur l'emporte sur l'astuce, à chaque fois.
 
 Construire sous ces contraintes m'a appris une chose que je crois maintenant valable partout. L'infrastructure suit les contraintes, pas les plans. La conception la plus résiliente est celle qui épouse le terrain sur lequel elle tourne, pas celle qui rendait le mieux sur un tableau blanc dans une ville avec de la fibre et du courant fiable.
 
@@ -46,6 +46,6 @@ Construire sous ces contraintes m'a appris une chose que je crois maintenant val
 
 La couche suivante se forme déjà. La ZLECAf et l'intégration régionale poussent vers des paiements qui traversent les frontières, pas seulement les rues. C'est un problème bien plus dur. Des opérateurs différents, des régulateurs différents sous la BEAC, des monnaies différentes aux bords de la zone. La question de réconciliation que j'ai décrite pour une banque et un opérateur se multiplie.
 
-Je crois que les équipes qui la résoudront seront celles qui auront compris le premier saut. Le mobile money n'a pas gagné parce qu'il était sophistiqué. Il a gagné parce qu'il épousait le terrain. Quoi qu'il vienne ensuite devra passer la même barre.
+Je crois que les équipes qui la résoudront seront celles qui auront compris le premier saut. Le mobile money n'a pas gagné parce qu'il était sophistiqué. Il a gagné parce qu'il collait au terrain. Ce qui viendra ensuite devra passer la même barre.
 
 C'est le prisme que j'apporte à tout ça. Construire pour le terrain sur lequel on se tient vraiment.
