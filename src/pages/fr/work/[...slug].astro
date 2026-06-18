@@ -1,11 +1,11 @@
 ---
-import Base from '../../layouts/Base.astro';
+import Base from '../../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const items = await getCollection(
     'work',
-    ({ data }) => !data.draft && data.lang === 'en',
+    ({ data }) => !data.draft && data.lang === 'fr',
   );
   return items.map((item) => ({ params: { slug: item.data.urlSlug }, props: { item } }));
 }
@@ -17,14 +17,14 @@ const { data } = item;
 
 <Base title={data.title} description={data.summary} type="article">
   <article class="wrap prose">
-    <a class="back" href="/work">← Work</a>
-    <span class="ledger-no">Case study</span>
+    <a class="back" href="/fr/work">← Réalisations</a>
+    <span class="ledger-no">Étude de cas</span>
     <h1>{data.title}</h1>
     <p class="lede">{data.summary}</p>
 
     <dl class="factsheet">
-      {data.role && <div><dt class="meta">Role</dt><dd>{data.role}</dd></div>}
-      {data.year && <div><dt class="meta">Year</dt><dd>{data.year}</dd></div>}
+      {data.role && <div><dt class="meta">Rôle</dt><dd>{data.role}</dd></div>}
+      {data.year && <div><dt class="meta">Année</dt><dd>{data.year}</dd></div>}
       {data.impact && <div><dt class="meta">Impact</dt><dd>{data.impact}</dd></div>}
       {data.stack.length > 0 && (
         <div><dt class="meta">Stack</dt><dd>{data.stack.join(' · ')}</dd></div>

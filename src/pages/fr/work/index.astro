@@ -2,9 +2,9 @@
 import Base from '../../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
-const work = (await getCollection('work', ({ data }) => !data.draft)).sort(
-  (a, b) => a.data.order - b.data.order,
-);
+const work = (
+  await getCollection('work', ({ data }) => !data.draft && data.lang === 'fr')
+).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Base title="Réalisations" description="Études de cas — infrastructure bancaire, mobile money, et systèmes fintech construits pour l'Afrique centrale.">
@@ -16,15 +16,13 @@ const work = (await getCollection('work', ({ data }) => !data.draft)).sort(
       systèmes confidentiels. La forme du problème et les décisions d'ingénierie
       comptent plus que les noms.
     </p>
-    <p class="note">Les études de cas sont pour l'instant rédigées en anglais.</p>
-
     {work.length === 0 ? (
       <p class="empty">Études de cas en cours de rédaction. Revenez bientôt.</p>
     ) : (
       <ol class="cases">
         {work.map((w, i) => (
           <li>
-            <a href={`/work/${w.id}`} class="case">
+            <a href={`/fr/work/${w.data.urlSlug}`} class="case">
               <span class="meta case-no">{String(i + 1).padStart(2, '0')}</span>
               <div class="case-body">
                 <h2>{w.data.title}</h2>

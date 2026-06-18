@@ -2,7 +2,9 @@
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
-const work = (await getCollection('work', ({ data }) => !data.draft))
+const work = (
+  await getCollection('work', ({ data }) => !data.draft && data.lang === 'en')
+)
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, 3);
 
@@ -155,7 +157,7 @@ const jsonLd = [
       <ul class="entry-list">
         {work.map((w) => (
           <li>
-            <a href={`/work/${w.id}`} class="entry">
+            <a href={`/work/${w.data.urlSlug}`} class="entry">
               <span class="entry-title">{w.data.title}</span>
               <span class="entry-summary">{w.data.summary}</span>
               {w.data.year && <span class="meta entry-year">{w.data.year}</span>}

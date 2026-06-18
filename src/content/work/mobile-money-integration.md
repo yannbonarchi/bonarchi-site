@@ -7,6 +7,8 @@ year: 2025
 impact: "TODO: add a concrete result (e.g. settlement time, error rate, volume)"
 order: 1
 draft: true
+lang: en
+urlSlug: mobile-money-integration
 ---
 
 > Starter template. Anonymize anything confidential — "a Central African bank"

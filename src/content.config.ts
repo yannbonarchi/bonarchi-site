@@ -31,6 +31,9 @@ const work = defineCollection({
     impact: z.string().optional(),
     order: z.number().default(0),
     draft: z.boolean().default(false),
+    lang: z.enum(['en', 'fr']).default('en'),
+    // Shared URL slug across translations (see writing collection note).
+    urlSlug: z.string(),
   }),
 });
 

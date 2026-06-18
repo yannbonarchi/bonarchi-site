@@ -7,6 +7,8 @@ year: 2024
 impact: "TODO: add a concrete result (e.g. zero downtime, X transactions migrated)"
 order: 2
 draft: true
+lang: en
+urlSlug: migrating-a-legacy-core-banking-module
 ---
 
 > Starter template. Keep it anonymized. Fill in your voice, set `draft: false`,

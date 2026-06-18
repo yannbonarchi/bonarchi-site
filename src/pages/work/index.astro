@@ -2,9 +2,9 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
-const work = (await getCollection('work', ({ data }) => !data.draft)).sort(
-  (a, b) => a.data.order - b.data.order,
-);
+const work = (
+  await getCollection('work', ({ data }) => !data.draft && data.lang === 'en')
+).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Base title="Work" description="Selected case studies — banking infrastructure, mobile money, and fintech systems built for Central Africa.">
@@ -23,7 +23,7 @@ const work = (await getCollection('work', ({ data }) => !data.draft)).sort(
       <ol class="cases">
         {work.map((w, i) => (
           <li>
-            <a href={`/work/${w.id}`} class="case">
+            <a href={`/work/${w.data.urlSlug}`} class="case">
               <span class="meta case-no">{String(i + 1).padStart(2, '0')}</span>
               <div class="case-body">
                 <h2>{w.data.title}</h2>

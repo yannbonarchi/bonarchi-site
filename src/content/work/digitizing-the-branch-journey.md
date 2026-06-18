@@ -7,6 +7,8 @@ year: 2024
 impact: "−45% client wait time · −40% processing time per transaction"
 order: 1
 draft: false
+lang: en
+urlSlug: digitizing-the-branch-journey
 ---
 
 ## Context
