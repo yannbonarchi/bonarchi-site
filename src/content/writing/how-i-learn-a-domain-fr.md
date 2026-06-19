@@ -32,7 +32,7 @@ Rien de tout ça n'était dans un tutoriel. Je l'ai appris parce que le pont aur
 
 ## Pourquoi j'apprends délibérément un nouveau domaine en ce moment
 
-J'étudie le business, volontairement, tout en continuant à livrer. L'économie, la comptabilité, les modèles de fonctionnement réel des organisations. Pas parce que je compte quitter l'ingénierie. Parce que le leadership est le prochain domaine dans lequel je veux pouvoir construire, et je lui applique la même méthode. Aller à la vérité du terrain. Trouver l'invariant. Avoir tort tôt.
+J'étudie le business en parallèle, sans cesser de livrer. L'économie, la comptabilité, les modèles de fonctionnement réel des organisations. Pas parce que je compte quitter l'ingénierie. Parce que le leadership est le prochain domaine dans lequel je veux pouvoir construire, et je lui applique la même méthode. Aller à la vérité du terrain. Trouver l'invariant. Avoir tort tôt.
 
 Il y a une phrase qui me revient. Brian Herbert a écrit que la capacité d'apprendre est un don, l'aptitude à apprendre une compétence, et la volonté d'apprendre un choix. La capacité, j'ai eu la chance de l'avoir. L'aptitude, je l'aiguise depuis des années. La volonté, c'est la part que je contrôle vraiment, et c'est celle qui voyage.
 
