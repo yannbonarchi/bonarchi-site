@@ -16,7 +16,7 @@
   --ink-faint: #8c8270;
   --rule: #d8cdb8;         /* borders */
   --rule-strong: #b8ab8f;  /* heavy rules */
-  --grid: #ddd1bb;         /* faded grid lines */
+  --grid: #d3c5a4;         /* faded grid lines (corners) */
   --accent: #b6492c;       /* terracotta */
   --accent-deep: #8f3620;
   --accent-wash: #efd9cf;
@@ -84,12 +84,12 @@ body::before {
     linear-gradient(90deg, var(--grid) 1px, transparent 1px);
   background-size: var(--cell) var(--cell);
   -webkit-mask-image:
-    radial-gradient(90% 60% at 100% 0%, #000 0%, transparent 58%),
-    radial-gradient(90% 60% at 0% 100%, #000 0%, transparent 58%);
+    radial-gradient(115% 80% at 100% 0%, #000 0%, transparent 70%),
+    radial-gradient(115% 80% at 0% 100%, #000 0%, transparent 70%);
   mask-image:
-    radial-gradient(90% 60% at 100% 0%, #000 0%, transparent 58%),
-    radial-gradient(90% 60% at 0% 100%, #000 0%, transparent 58%);
-  opacity: 0.7;
+    radial-gradient(115% 80% at 100% 0%, #000 0%, transparent 70%),
+    radial-gradient(115% 80% at 0% 100%, #000 0%, transparent 70%);
+  opacity: 0.78;
 }
 
 /* --- headings: Bricolage, tight, confident --------------------- */
