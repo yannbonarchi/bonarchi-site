@@ -70,6 +70,27 @@ const ogLocale = lang === 'fr' ? 'fr_FR' : 'en';
           } catch (_) {}
         }
       });
+
+      // Reveal the graph grid around the pointer (cursor + finger).
+      (function () {
+        try {
+          if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          if (window.__gridReveal) return;
+          window.__gridReveal = true;
+          var x = -500, y = -500, raf = 0;
+          var move = function (e) {
+            x = e.clientX; y = e.clientY;
+            if (!raf) {
+              raf = requestAnimationFrame(function () {
+                document.body.style.setProperty('--mx', x + 'px');
+                document.body.style.setProperty('--my', y + 'px');
+                raf = 0;
+              });
+            }
+          };
+          addEventListener('pointermove', move, { passive: true });
+        } catch (e) {}
+      })();
     </script>
     <title>{fullTitle}</title>
     <meta name="description" content={description} />

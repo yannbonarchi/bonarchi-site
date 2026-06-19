@@ -84,11 +84,13 @@ body::before {
     linear-gradient(90deg, var(--grid) 1px, transparent 1px);
   background-size: var(--cell) var(--cell);
   -webkit-mask-image:
-    radial-gradient(115% 80% at 100% 0%, #000 0%, transparent 70%),
-    radial-gradient(115% 80% at 0% 100%, #000 0%, transparent 70%);
+    radial-gradient(85% 55% at 100% 0%, #000 0%, transparent 60%),
+    radial-gradient(85% 55% at 0% 100%, #000 0%, transparent 60%),
+    radial-gradient(210px 210px at var(--mx, -500px) var(--my, -500px), #000 0%, transparent 72%);
   mask-image:
-    radial-gradient(115% 80% at 100% 0%, #000 0%, transparent 70%),
-    radial-gradient(115% 80% at 0% 100%, #000 0%, transparent 70%);
+    radial-gradient(85% 55% at 100% 0%, #000 0%, transparent 60%),
+    radial-gradient(85% 55% at 0% 100%, #000 0%, transparent 60%),
+    radial-gradient(210px 210px at var(--mx, -500px) var(--my, -500px), #000 0%, transparent 72%);
   opacity: 0.78;
 }
 
