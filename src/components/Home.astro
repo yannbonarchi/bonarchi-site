@@ -153,7 +153,7 @@ const COPY = {
 <!-- SELECTED WORK -->
 <section class="wrap block">
   <header class="block-head">
-    <span class="ledger-no">01</span>
+    <span class="ledger-no">§</span>
     <h2>{COPY.workH}</h2>
     <a class="more" href={`${base}/work`}>{COPY.workMore}</a>
   </header>
@@ -180,7 +180,7 @@ const COPY = {
 <!-- WRITING -->
 <section class="wrap block">
   <header class="block-head">
-    <span class="ledger-no">02</span>
+    <span class="ledger-no">§</span>
     <h2>{COPY.writingH}</h2>
     <a class="more" href={`${base}/writing`}>{COPY.writingMore}</a>
   </header>
@@ -301,22 +301,29 @@ const COPY = {
   /* generic block */
   .block { margin-block: clamp(3rem, 7vw, 5rem); }
   .block-head {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: baseline;
-    gap: 1rem;
+    column-gap: 1rem;
     margin-bottom: 1.75rem;
     border-bottom: 1px solid var(--rule);
     padding-bottom: 0.5rem;
   }
-  .block-head h2 { margin: 0; }
+  .block-head .ledger-no { grid-column: 1 / -1; margin-bottom: 0.35rem; }
+  .block-head h2 { grid-column: 1; margin: 0; }
   .block-head .more {
-    margin-left: auto;
+    grid-column: 2;
+    justify-self: end;
     font-family: var(--label);
     font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     white-space: nowrap;
+  }
+  @media (max-width: 560px) {
+    .block-head { grid-template-columns: 1fr; }
+    .block-head .more { grid-column: 1; justify-self: start; margin-top: 0.6rem; }
   }
 
   .focus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
